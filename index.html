@@ -85,6 +85,7 @@
       text-decoration: none;
       color: #ffffff;
       transition: transform 0.2s ease, border-color 0.2s ease;
+      margin-bottom: 16px;
     }
 
     .card-link:hover {
@@ -113,10 +114,38 @@
       gap: 6px;
     }
 
+    /* Botão Verde WhatsApp */
+    .btn-whatsapp {
+      width: 100%;
+      background-color: #25d366;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 16px 20px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+      margin-bottom: 24px;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #20ba5a;
+      transform: translateY(-2px);
+    }
+
+    .btn-whatsapp i {
+      font-size: 22px;
+    }
+
     /* Rodapé */
     .footer-links {
       margin-top: auto;
-      padding-top: 40px;
+      padding-top: 20px;
       padding-bottom: 10px;
       display: flex;
       flex-wrap: wrap;
@@ -145,15 +174,14 @@
       <a href="#" class="icon-btn" title="Compartilhar"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
     </div>
 
-    <!-- Foto do Perfil (Imagem 23.PNG) -->
+    <!-- Foto do Perfil -->
     <img class="profile-img" src="23.PNG" alt="Tacadinhas MOD" />
     
     <h1 class="username">@Tacadapro</h1>
     <p class="bio">Software lucrativo e confiável. 🎱💰</p>
 
-    <!-- Card com Banner (Imagem 22.PNG) -->
-    <!-- Coloque seu link do WhatsApp no href abaixo -->
-    <a href="https://wa.me/SEUNUMERO" target="_blank" class="card-link">
+    <!-- Card com Banner -->
+    <a href="https://api.whatsapp.com/send/?phone=5586998260322&text=Quero+ter+acesso+ao+tacadinhaMOD&type=phone_number&app_absent=0" target="_blank" class="card-link">
       <img class="card-banner" src="22.PNG" alt="Entra em contato pelo WhatsApp" />
       
       <div class="card-footer">
@@ -162,6 +190,12 @@
         </span>
         <i class="fa-solid fa-ellipsis-vertical" style="color: #666;"></i>
       </div>
+    </a>
+
+    <!-- Botão Verde WhatsApp -->
+    <a href="https://wa.me/SEUNUMERO" target="_blank" class="btn-whatsapp">
+      <i class="fa-brands fa-whatsapp"></i>
+      FALAR NO WHATSAPP
     </a>
 
     <!-- Rodapé Estilo Linktree -->
