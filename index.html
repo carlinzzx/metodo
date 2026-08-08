@@ -219,11 +219,14 @@
       let target_blank = true;
       
       if (target_blank) {
-        // 1. Abre uma aba totalmente em branco primeiro (about:blank)
-        let novaAba = window.open("about:blank", "_blank", "noopener,noreferrer");
+        // 1. Abre uma aba totalmente em branco primeiro (sem o bloqueio inicial)
+        let novaAba = window.open("about:blank", "_blank");
         
-        // 2. Redireciona a nova aba criada para o link do WhatsApp
         if (novaAba) {
+          // 2. Aplica a segurança "noopener" manualmente, cortando a relação com a página original
+          novaAba.opener = null;
+          
+          // 3. Agora sim, joga o link do WhatsApp dentro da aba em branco
           novaAba.location.href = targetUrl;
         }
       }
