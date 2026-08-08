@@ -1,214 +1,240 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@Tacadapro</title>
-  <!-- Ícones Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
+<style>
+body {
+  background-color: #000000;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+  min-height: 100vh;
+  padding: 20px 15px;
+}
 
-    body {
-      background-color: #000000;
-      color: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center; /* Centraliza o conteúdo verticalmente */
-      min-height: 100vh;
-      padding: 20px 15px;
-    }
+.container {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
 
-    .container {
-      width: 100%;
-      max-width: 480px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-    }
+/* Botões do topo */
+.top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
 
-    /* Botões do topo */
-    .top-bar {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 20px;
-    }
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #222222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+}
 
-    .icon-btn {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: #222222;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 16px;
-    }
+/* Perfil */
+.profile-img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
 
-    /* Perfil */
-    .profile-img {
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 16px;
-    }
+.username {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
 
-    .username {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
+.bio {
+  font-size: 14px;
+  color: #dddddd;
+  text-align: center;
+  margin-bottom: 24px;
+}
 
-    .bio {
-      font-size: 14px;
-      color: #dddddd;
-      text-align: center;
-      margin-bottom: 24px;
-    }
+/* Card Principal */
+.card-link {
+  width: 100%;
+  background-color: #121212;
+  border: 1px solid #222222;
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #ffffff;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
 
-    /* Card Principal */
-    .card-link {
-      width: 100%;
-      background-color: #121212;
-      border: 1px solid #222222;
-      border-radius: 20px;
-      overflow: hidden;
-      text-decoration: none;
-      color: #ffffff;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-      margin-bottom: 16px;
-    }
+.card-link:hover {
+  transform: translateY(-2px);
+  border-color: #333333;
+}
 
-    .card-link:hover {
-      transform: translateY(-2px);
-      border-color: #333333;
-    }
+.card-banner {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
 
-    .card-banner {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-    }
+.card-footer {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    .card-footer {
-      padding: 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+/* Estilo da frase destacada */
+.card-footer-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+}
 
-    /* Estilo da frase destacada */
-    .card-footer-text {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      font-weight: 700;
-      color: #ffffff;
-    }
+/* Botão Verde WhatsApp */
+.btn-whatsapp {
+  width: 100%;
+  background-color: #25d366;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 16px 20px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
 
-    /* Botão Verde WhatsApp */
-    .btn-whatsapp {
-      width: 100%;
-      background-color: #25d366;
-      color: #ffffff;
-      font-size: 16px;
-      font-weight: 700;
-      text-decoration: none;
-      padding: 16px 20px;
-      border-radius: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-      transition: transform 0.2s ease, background-color 0.2s ease;
-      margin-bottom: 24px;
-    }
+.btn-whatsapp:hover {
+  background-color: #20ba5a;
+  transform: translateY(-2px);
+}
 
-    .btn-whatsapp:hover {
-      background-color: #20ba5a;
-      transform: translateY(-2px);
-    }
+.btn-whatsapp i {
+  font-size: 22px;
+}
 
-    .btn-whatsapp i {
-      font-size: 22px;
-    }
+/* Rodapé */
+.footer-links {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #888888;
+}
 
-    /* Rodapé */
-    .footer-links {
-      padding-top: 10px;
-      padding-bottom: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px;
-      font-size: 12px;
-      color: #888888;
-    }
+.footer-links a {
+  color: #888888;
+  text-decoration: none;
+}
 
-    .footer-links a {
-      color: #888888;
-      text-decoration: none;
-    }
+.footer-links a:hover {
+  text-decoration: underline;
+}
+</style>
 
-    .footer-links a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
 
-  <div class="container">
-    <!-- Topo com botões -->
-    <div class="top-bar">
-      <a href="#" class="icon-btn" title="Opções"><i class="fa-solid fa-asterisk"></i></a>
-      <a href="#" class="icon-btn" title="Compartilhar"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
-    </div>
+<!-- Foto do Perfil -->
+<img class="22.PNG" src="23.PNG" alt="Tacadinhas MOD" />
 
-    <!-- Foto do Perfil -->
-    <img class="profile-img" src="23.PNG" alt="Tacadinhas MOD" />
-    
-    <h1 class="username">@Tacadapro</h1>
-    <p class="bio">Software lucrativo e confiável. 🎱💰</p>
+<h1 class="username">@Tacadapro</h1>
 
-    <!-- Card com Banner -->
-    <a href="https://api.whatsapp.com/send/?phone=5586998260322&text=Quero+ter+acesso+ao+tacadinhaMOD&type=phone_number&app_absent=0" target="_blank" class="card-link">
-      <img class="card-banner" src="22.PNG" alt="Entra em contato pelo WhatsApp" />
-      
-      <div class="card-footer">
-        <span class="card-footer-text">
-          Tenha acesso à ferramenta clicando no botão verde abaixo ⬇️
-        </span>
-        <i class="fa-solid fa-ellipsis-vertical" style="color: #888;"></i>
-      </div>
-    </a>
+<p class="bio">Software lucrativo e confiável. 🎱💰</p>
 
-    <!-- Botão Verde WhatsApp -->
-    <a href="https://api.whatsapp.com/send/?phone=5586998260322&text=Quero+ter+acesso+ao+tacadinhaMOD&type=phone_number&app_absent=0" target="_blank" class="btn-whatsapp">
-      <i class="fa-brands fa-whatsapp"></i>
-      FALAR NO WHATSAPP
-    </a>
 
-    <!-- Rodapé Estilo Linktree -->
-    <div class="footer-links">
-      <a href="#">Cookie Preferences</a> •
-      <a href="#">Report</a> •
-      <a href="#">Privacy</a> •
-      <a href="#">About this account</a> •
-      <a href="#">More from Linktree</a>
-    </div>
+<!-- Card com Banner -->
+<a
+  href="https://api.whatsapp.com/send/?phone=5586998260322&text=Quero+ter+acesso+ao+tacadinhaMOD&type=phone_number&app_absent=0"
+  class="card-link"
+  onclick="abrirWhatsApp(event, this.href)"
+>
+  <img
+    class="card-banner"
+    src="22.PNG"
+    alt="Entra em contato pelo WhatsApp"
+  />
+
+  <div class="card-footer">
+    <span class="card-footer-text">
+      Tenha acesso à ferramenta clicando no botão verde abaixo ⬇️
+    </span>
+
+    <i
+      class="fa-solid fa-ellipsis-vertical"
+      style="color: #888;"
+    ></i>
   </div>
+</a>
 
-</body>
-</html>
+
+<!-- Botão Verde WhatsApp -->
+<a
+  href="https://api.whatsapp.com/send/?phone=5586998260322&text=Quero+ter+acesso+ao+tacadinhaMOD&type=phone_number&app_absent=0"
+  class="btn-whatsapp"
+  onclick="abrirWhatsApp(event, this.href)"
+>
+  <i class="fa-brands fa-whatsapp"></i>
+  FALAR NO WHATSAPP
+</a>
+
+
+<!-- Rodapé Estilo Linktree -->
+<div class="footer-links">
+  <a href="#">Cookie Preferences</a> •
+  <a href="#">Report</a> •
+  <a href="#">Privacy</a> •
+  <a href="#">About this account</a> •
+  <a href="#">More from Linktree</a>
+</div>
+
+
+<!-- Sistema de abertura do link -->
+<script>
+(function () {
+
+  /* Mesmo comportamento do site funcional */
+  const target_blank = true;
+
+  window.abrirWhatsApp = function (event, targetUrl) {
+
+    event.preventDefault();
+
+    if (target_blank) {
+
+      window.open(
+        targetUrl,
+        "_blank",
+        "noopener,noreferrer"
+      );
+
+    } else {
+
+      window.location.href = targetUrl;
+
+    }
+
+  };
+
+})();
+</script>
