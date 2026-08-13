@@ -4,8 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>@Tacadapro</title>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '1647681359913232');
+    fbq('track', 'PageView');
+  </script>
+
+  <noscript>
+    <img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=1647681359913232&ev=PageView&noscript=1"
+    />
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
   <!-- Ícones Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
   <style>
     * {
       box-sizing: border-box;
@@ -19,7 +49,7 @@
       color: #ffffff;
       display: flex;
       justify-content: center;
-      align-items: center; /* Centraliza o conteúdo verticalmente */
+      align-items: center;
       min-height: 100vh;
       padding: 20px 15px;
     }
@@ -167,40 +197,70 @@
     }
   </style>
 </head>
+
 <body>
 
   <div class="container">
+
     <!-- Topo com botões -->
     <div class="top-bar">
-      <a href="#" class="icon-btn" title="Opções"><i class="fa-solid fa-asterisk"></i></a>
-      <a href="#" class="icon-btn" title="Compartilhar"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
+      <a href="#" class="icon-btn" title="Opções">
+        <i class="fa-solid fa-asterisk"></i>
+      </a>
+
+      <a href="#" class="icon-btn" title="Compartilhar">
+        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+      </a>
     </div>
 
     <!-- Foto do Perfil -->
-    <img class="profile-img" src="23.PNG" alt="Tacadinhas MOD" />
-    
-    <h1 class="username">@Tacadapro</h1>
-    <p class="bio">Software lucrativo e confiável. 🎱💰</p>
+    <img
+      class="profile-img"
+      src="23.PNG"
+      alt="Tacadinhas MOD"
+    />
 
-    <!-- Card com Banner -->
-    <a href="https://api.whatsapp.com/send/?phone=5586998260322&text=Quero+ter+acesso+ao+tacadinhaMOD&type=phone_number&app_absent=0" onclick="abrirWhatsApp(event, this.href)" class="card-link">
-      <img class="card-banner" src="22.PNG" alt="Entra em contato pelo WhatsApp" />
-      
+    <h1 class="username">@Tacadapro</h1>
+
+    <p class="bio">
+      Software lucrativo e confiável. 🎱💰
+    </p>
+
+    <!-- Card com Banner - WhatsApp -->
+    <a
+      href="https://api.whatsapp.com/send/?phone=5586998260322&text=Quero+ter+acesso+ao+tacadinhaMOD&type=phone_number&app_absent=0"
+      onclick="abrirWhatsApp(event, this.href)"
+      class="card-link"
+    >
+      <img
+        class="card-banner"
+        src="22.PNG"
+        alt="Entra em contato pelo WhatsApp"
+      />
+
       <div class="card-footer">
         <span class="card-footer-text">
           Tenha acesso à ferramenta clicando no botão verde abaixo ⬇️
         </span>
-        <i class="fa-solid fa-ellipsis-vertical" style="color: #888;"></i>
+
+        <i
+          class="fa-solid fa-ellipsis-vertical"
+          style="color: #888;"
+        ></i>
       </div>
     </a>
 
     <!-- Botão Verde WhatsApp -->
-    <a href="https://api.whatsapp.com/send/?phone=5586998260322&text=Quero+ter+acesso+ao+tacadinhaMOD&type=phone_number&app_absent=0" onclick="abrirWhatsApp(event, this.href)" class="btn-whatsapp">
+    <a
+      href="https://api.whatsapp.com/send/?phone=5586998260322&text=Quero+ter+acesso+ao+tacadinhaMOD&type=phone_number&app_absent=0"
+      onclick="abrirWhatsApp(event, this.href)"
+      class="btn-whatsapp"
+    >
       <i class="fa-brands fa-whatsapp"></i>
       FALAR NO WHATSAPP
     </a>
 
-    <!-- Rodapé Estilo Linktree -->
+    <!-- Rodapé -->
     <div class="footer-links">
       <a href="#">Cookie Preferences</a> •
       <a href="#">Report</a> •
@@ -208,29 +268,29 @@
       <a href="#">About this account</a> •
       <a href="#">More from Linktree</a>
     </div>
+
   </div>
 
-  <!-- Script para gerenciar a abertura do WhatsApp -->
+  <!-- Script do WhatsApp + Meta Pixel -->
   <script>
     function abrirWhatsApp(event, targetUrl) {
-      // Evita o redirecionamento padrão do HTML no clique
+      // Evita o redirecionamento padrão
       event.preventDefault();
-      
-      let target_blank = true;
-      
-      if (target_blank) {
-        // 1. Abre uma aba totalmente em branco primeiro (sem o bloqueio inicial)
-        let novaAba = window.open("about:blank", "_blank");
-        
-        if (novaAba) {
-          // 2. Aplica a segurança "noopener" manualmente, cortando a relação com a página original
-          novaAba.opener = null;
-          
-          // 3. Agora sim, joga o link do WhatsApp dentro da aba em branco
-          novaAba.location.href = targetUrl;
-        }
+
+      // Meta Pixel - registra o clique no WhatsApp
+      if (typeof fbq === 'function') {
+        fbq('track', 'Contact');
+      }
+
+      // Abre o WhatsApp em uma nova aba
+      let novaAba = window.open("about:blank", "_blank");
+
+      if (novaAba) {
+        novaAba.opener = null;
+        novaAba.location.href = targetUrl;
       }
     }
   </script>
+
 </body>
 </html>
